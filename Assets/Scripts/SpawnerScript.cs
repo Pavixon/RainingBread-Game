@@ -28,27 +28,21 @@ public class SpawnerScript : MonoBehaviour
             SetPrefab();
             Instantiate(foodPrefab[prefabRoll], transform.position, Quaternion.identity);
             SetSpawnerPosition();
-            if(logic.playerScore < 10)
-            {
-                spawnRate = 1.1f;
-            }
-            else if (logic.playerScore >= 10 && logic.playerScore < 40)
-            {
-                spawnRate = 1f;
-            }
-            else if (logic.playerScore >= 40 && logic.playerScore < 60)
-            {
-                spawnRate = 0.8f;
-            }
-            else if (logic.playerScore >= 60 && logic.playerScore < 80)
-            {
-                spawnRate = 0.6f;
-            }
-            else
-            {
-                spawnRate = 0.5f;
-            }
+            spawnRate = GetSpawnRate();
         }
+    }
+    private float GetSpawnRate()
+    {
+        if (logic.playerScore < 10)
+            return 1.1f;
+        else if (logic.playerScore < 40)
+            return 1f;
+        else if (logic.playerScore < 60)
+            return 0.8f;
+        else if (logic.playerScore < 80)
+            return 0.6f;
+        else
+            return 0.5f;
     }
 
     public void SetSpawnerPosition()
