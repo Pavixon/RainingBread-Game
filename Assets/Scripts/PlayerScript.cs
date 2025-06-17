@@ -66,6 +66,7 @@ public class PlayerScript : MonoBehaviour
     {
         if (gameObject.tag == "Player" && collision.gameObject.tag == "Bread")
         {
+            sr.transform.localScale *= 1.01f;
             eatBreadSound.Play();
             logic.AddScore(1);
             Destroy(collision.gameObject);
