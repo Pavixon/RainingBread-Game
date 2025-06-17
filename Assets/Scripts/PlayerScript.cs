@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,6 +15,8 @@ public class PlayerScript : MonoBehaviour
     public AudioSource eatBreadSound;
     public AudioSource eatBadMeatSound;
     private int upgarde = 25;
+    private int blinkCout = 5;
+    private bool isBlinking = false;
 
     void Start()
     {
@@ -57,6 +60,20 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
+     private IEnumerator Blink()
+    {
+        isBlinking = true;
+        for (int i = 0; i < blinkCout; i++)
+        {
+            sr.enabled = false;
+            yield return new WaitForSeconds(0.2f);
+            sr.enabled = true;
+            yield return new WaitForSeconds(0.2f);
+        }
+        isBlinking = false;
+        
+    }
+
     public void SpeedUp()
     {
         moveSpeed+=2.4f;
@@ -71,8 +88,9 @@ public class PlayerScript : MonoBehaviour
             logic.AddScore(1);
             Destroy(collision.gameObject);
         }
-        else if (gameObject.tag == "Player" && collision.gameObject.tag == "Enemy")
+        else if (gameObject.tag == "Player" && collision.gameObject.tag == "Enemy" && isBlinking == false)
         {
+            StartCoroutine(Blink());
             eatBadMeatSound.Play();
             logic.LoseHP(1);
             Destroy(collision.gameObject);
