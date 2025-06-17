@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 public class PlayerScript : MonoBehaviour
 {
     public Rigidbody2D rb;
-    public float moveSpeed = 5f;
+    public float moveSpeed = 6f;
     public SpriteRenderer sr;
     private Vector2 moveInput;
     private LogicScript logic;
@@ -60,7 +60,7 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
-     private IEnumerator Blink()
+    private IEnumerator Blink()
     {
         isBlinking = true;
         for (int i = 0; i < blinkCout; i++)

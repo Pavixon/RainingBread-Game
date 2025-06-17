@@ -8,6 +8,7 @@ public class SpawnerScript : MonoBehaviour
     public float spawnRate;
     private float spawnerPosition;
     private int prefabRoll;
+    private float[] spawnSlots = new float[] { -6f, -4f, -2f, 0f, 2f, 4f, 6f };
     public LogicScript logic;
 
     void Start()
@@ -52,7 +53,7 @@ public class SpawnerScript : MonoBehaviour
 
     public void SetSpawnerPosition()
     {
-        spawnerPosition = Random.Range(-7.5f, 7.5f);
+        spawnerPosition = spawnSlots[Random.Range(0, spawnSlots.Length)];
     }
 
     public void SetPrefab()
