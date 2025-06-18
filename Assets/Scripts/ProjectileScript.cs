@@ -20,10 +20,10 @@ public class ProjectileScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(gameObject);
         if (gameObject.tag == "Bread" && collision.gameObject.tag == "DeadZone")
         {
             logic.LoseHP(1);
         }
+        Destroy(gameObject);
     }
 }

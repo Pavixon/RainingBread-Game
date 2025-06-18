@@ -626,7 +626,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 6
+  m_Constraints: 4
 --- !u!212 &274412042
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3580,7 +3580,7 @@ PrefabInstance:
       objectReference: {fileID: 7127835710552395138, guid: 888af7a96c6996e4db81773c6442a02b, type: 3}
     - target: {fileID: 1260482093257878310, guid: d92b5aaa7e7d55e478e34eb333483c69, type: 3}
       propertyPath: foodPrefab.Array.size
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1260482093257878310, guid: d92b5aaa7e7d55e478e34eb333483c69, type: 3}
       propertyPath: foodPrefab.Array.data[0]
@@ -3588,6 +3588,38 @@ PrefabInstance:
       objectReference: {fileID: 6073080276616344299, guid: 654147df7a2396e4090e11b4d183a859, type: 3}
     - target: {fileID: 1260482093257878310, guid: d92b5aaa7e7d55e478e34eb333483c69, type: 3}
       propertyPath: foodPrefab.Array.data[1]
+      value: 
+      objectReference: {fileID: 6073080276616344299, guid: 654147df7a2396e4090e11b4d183a859, type: 3}
+    - target: {fileID: 1260482093257878310, guid: d92b5aaa7e7d55e478e34eb333483c69, type: 3}
+      propertyPath: foodPrefab.Array.data[2]
+      value: 
+      objectReference: {fileID: 6073080276616344299, guid: 654147df7a2396e4090e11b4d183a859, type: 3}
+    - target: {fileID: 1260482093257878310, guid: d92b5aaa7e7d55e478e34eb333483c69, type: 3}
+      propertyPath: foodPrefab.Array.data[3]
+      value: 
+      objectReference: {fileID: 6073080276616344299, guid: 654147df7a2396e4090e11b4d183a859, type: 3}
+    - target: {fileID: 1260482093257878310, guid: d92b5aaa7e7d55e478e34eb333483c69, type: 3}
+      propertyPath: foodPrefab.Array.data[4]
+      value: 
+      objectReference: {fileID: 6073080276616344299, guid: 654147df7a2396e4090e11b4d183a859, type: 3}
+    - target: {fileID: 1260482093257878310, guid: d92b5aaa7e7d55e478e34eb333483c69, type: 3}
+      propertyPath: foodPrefab.Array.data[5]
+      value: 
+      objectReference: {fileID: 6073080276616344299, guid: 654147df7a2396e4090e11b4d183a859, type: 3}
+    - target: {fileID: 1260482093257878310, guid: d92b5aaa7e7d55e478e34eb333483c69, type: 3}
+      propertyPath: foodPrefab.Array.data[6]
+      value: 
+      objectReference: {fileID: 6073080276616344299, guid: 654147df7a2396e4090e11b4d183a859, type: 3}
+    - target: {fileID: 1260482093257878310, guid: d92b5aaa7e7d55e478e34eb333483c69, type: 3}
+      propertyPath: foodPrefab.Array.data[7]
+      value: 
+      objectReference: {fileID: 7127835710552395138, guid: 888af7a96c6996e4db81773c6442a02b, type: 3}
+    - target: {fileID: 1260482093257878310, guid: d92b5aaa7e7d55e478e34eb333483c69, type: 3}
+      propertyPath: foodPrefab.Array.data[8]
+      value: 
+      objectReference: {fileID: 7127835710552395138, guid: 888af7a96c6996e4db81773c6442a02b, type: 3}
+    - target: {fileID: 1260482093257878310, guid: d92b5aaa7e7d55e478e34eb333483c69, type: 3}
+      propertyPath: foodPrefab.Array.data[9]
       value: 
       objectReference: {fileID: 7127835710552395138, guid: 888af7a96c6996e4db81773c6442a02b, type: 3}
     - target: {fileID: 1260482093257878311, guid: d92b5aaa7e7d55e478e34eb333483c69, type: 3}
