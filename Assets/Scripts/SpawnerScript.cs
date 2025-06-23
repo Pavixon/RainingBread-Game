@@ -8,7 +8,7 @@ public class SpawnerScript : MonoBehaviour
     private float spawnRate=1;
     private float spawnerPosition;
     private int prefabRoll;
-    private float[] spawnSlots = new float[] { -6f, -4f, -2f, 0f, 2f, 4f, 6f };
+    private float[] spawnSlots = new float[] { -6f, 5f, -4f, -4f, -2f, -1f, 0f, 1f, 2f, 3f, 4f, 5f, 6f };
     public LogicScript logic;
     private float gameTime;
 
@@ -42,8 +42,8 @@ public class SpawnerScript : MonoBehaviour
     {
         // Example: spawn rate decreases gradually over 120 seconds
         // Initial rate: 1.5s → minimum rate: 0.4s
-        float rate = 1.5f - (gameTime / 120f); // decrease rate over 2 minutes
-        return Mathf.Clamp(rate, 0.4f, 1.5f);  // prevent going below 0.4s
+        float rate = 1.5f - (gameTime / 150f); // decrease rate over 2 minutes
+        return Mathf.Clamp(rate, 0.5f, 1.5f);  // prevent going below 0.4s
     }
 
     public void SetSpawnerPosition()

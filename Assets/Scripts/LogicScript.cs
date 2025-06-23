@@ -19,6 +19,7 @@ public class LogicScript : MonoBehaviour
     private void Start()
     {
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Projectiles"), LayerMask.NameToLayer("Projectiles"));
+        Application.targetFrameRate = 60;
     }
     public void AddScore(int scoreToAdd)
     {

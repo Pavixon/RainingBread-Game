@@ -52,7 +52,8 @@ public class PlayerScript : MonoBehaviour
 
     public void Move(InputAction.CallbackContext context)
     {
-        moveInput = context.ReadValue<Vector2>();
+        Vector2 input = context.ReadValue<Vector2>();
+        moveInput = new Vector2(input.x, 0f);
         if(logic.playerScore == upgarde)
         {
             SpeedUp();
@@ -88,9 +89,9 @@ public class PlayerScript : MonoBehaviour
         switch (tag)
         {
             case "Bread":
-                if (logic.playerScore < 100)
+                if (logic.playerScore < 50)
                 {
-                    sr.transform.localScale *= 1.01f;
+                    sr.transform.localScale *= 1.02f;
                 }
                 eatBreadSound.Play();
                 logic.AddScore(1);
@@ -98,7 +99,10 @@ public class PlayerScript : MonoBehaviour
                 break;
 
             case "HP":
-                logic.HpMenager(1);
+                if (logic.playerHP < 5)
+                {
+                    logic.HpMenager(1);
+                }
                 Destroy(collision.gameObject);
                 break;
 
