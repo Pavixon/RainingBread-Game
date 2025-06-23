@@ -40,7 +40,7 @@ public class PlayerScript : MonoBehaviour
             {
                 isPlayerAlive = false;
                 Destroy(gameObject);
-                logic.gameOver();
+                logic.GameOver();
             }
             else
             {
@@ -55,7 +55,7 @@ public class PlayerScript : MonoBehaviour
         if(logic.playerScore == upgarde)
         {
             SpeedUp();
-            logic.LoseHP(-1);
+            logic.HpMenager(1);
             upgarde += 25;
         }
     }
@@ -88,11 +88,16 @@ public class PlayerScript : MonoBehaviour
             logic.AddScore(1);
             Destroy(collision.gameObject);
         }
+        else if(gameObject.tag == "Player" && collision.gameObject.tag == "HP")
+        {
+            logic.HpMenager(1);
+            Destroy(collision.gameObject);
+        }
         else if (gameObject.tag == "Player" && collision.gameObject.tag == "Enemy" && isBlinking == false)
         {
             StartCoroutine(Blink());
             eatBadMeatSound.Play();
-            logic.LoseHP(1);
+            logic.HpMenager(-1);
             Destroy(collision.gameObject);
         }
     }

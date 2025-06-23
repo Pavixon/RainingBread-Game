@@ -22,7 +22,7 @@ public class ProjectileScript : MonoBehaviour
     {
         if (gameObject.tag == "Bread" && collision.gameObject.tag == "DeadZone")
         {
-            logic.LoseHP(1);
+            logic.HpMenager(-1);
         }
         Destroy(gameObject);
     }

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class LogicScript : MonoBehaviour
 {
     public int playerScore;
-    public int playerHP = 5;
+    public int playerHP = 3;
     public Text scoreText;
     public Text hpText;
     public Text finalScore;
@@ -22,29 +22,29 @@ public class LogicScript : MonoBehaviour
         scoreText.text = playerScore.ToString();
     }
 
-    public void LoseHP(int hpToLose)
+    public void HpMenager(int hpValue)
     {
-        playerHP -= hpToLose;
+        playerHP += hpValue;
         hpText.text = playerHP.ToString();
     }
 
-    public void showCredits()
+    public void ShowCredits()
     {
         startingScreen.SetActive(false);
         creditsScreen.SetActive(true);
     }
 
-    public void startGame()
+    public void StartGame()
     {
         startingScreen.SetActive(false);
         gameScreen.SetActive(true);
     }
 
-    public void resetGame()
+    public void ResetGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-    public void gameOver()
+    public void GameOver()
     {
         finalScore.text = playerScore.ToString();
         gameScreen.SetActive(false);
