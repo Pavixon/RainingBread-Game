@@ -16,6 +16,10 @@ public class LogicScript : MonoBehaviour
     public GameObject gameScreen;
     public GameObject creditsScreen;
 
+    private void Start()
+    {
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Projectiles"), LayerMask.NameToLayer("Projectiles"));
+    }
     public void AddScore(int scoreToAdd)
     {
         playerScore += scoreToAdd;
