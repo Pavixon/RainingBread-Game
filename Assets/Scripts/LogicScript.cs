@@ -38,6 +38,7 @@ public class LogicScript : MonoBehaviour
     {
         startingScreen.SetActive(false);
         gameScreen.SetActive(true);
+        HpMenager(0);
     }
 
     public void ResetGame()
@@ -51,7 +52,7 @@ public class LogicScript : MonoBehaviour
         gameOverScreen.SetActive(true);
     }
 
-    public void quitGame()
+    public void QuitGame()
     {
         Application.Quit();
     }

@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Bread
   - DeadZone
+  - HP
   layers:
   - Default
   - TransparentFX

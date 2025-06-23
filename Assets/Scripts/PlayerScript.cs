@@ -7,13 +7,14 @@ using UnityEngine.InputSystem;
 public class PlayerScript : MonoBehaviour
 {
     public Rigidbody2D rb;
-    public float moveSpeed = 6f;
     public SpriteRenderer sr;
+    public AudioSource eatBreadSound;
+    public AudioSource eatBadMeatSound;
+    [SerializeField]
+    private float moveSpeed = 6f;
     private Vector2 moveInput;
     private LogicScript logic;
     private bool isPlayerAlive = true;
-    public AudioSource eatBreadSound;
-    public AudioSource eatBadMeatSound;
     private int upgarde = 25;
     private int blinkCout = 5;
     private bool isBlinking = false;
@@ -55,7 +56,6 @@ public class PlayerScript : MonoBehaviour
         if(logic.playerScore == upgarde)
         {
             SpeedUp();
-            logic.HpMenager(1);
             upgarde += 25;
         }
     }
@@ -76,29 +76,41 @@ public class PlayerScript : MonoBehaviour
 
     public void SpeedUp()
     {
-        moveSpeed+=2.4f;
+        moveSpeed+=2.5f;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (gameObject.tag == "Player" && collision.gameObject.tag == "Bread")
+        if (gameObject.tag != "Player") return;
+
+        string tag = collision.gameObject.tag;
+
+        switch (tag)
         {
-            sr.transform.localScale *= 1.01f;
-            eatBreadSound.Play();
-            logic.AddScore(1);
-            Destroy(collision.gameObject);
-        }
-        else if(gameObject.tag == "Player" && collision.gameObject.tag == "HP")
-        {
-            logic.HpMenager(1);
-            Destroy(collision.gameObject);
-        }
-        else if (gameObject.tag == "Player" && collision.gameObject.tag == "Enemy" && isBlinking == false)
-        {
-            StartCoroutine(Blink());
-            eatBadMeatSound.Play();
-            logic.HpMenager(-1);
-            Destroy(collision.gameObject);
+            case "Bread":
+                if (logic.playerScore < 100)
+                {
+                    sr.transform.localScale *= 1.01f;
+                }
+                eatBreadSound.Play();
+                logic.AddScore(1);
+                Destroy(collision.gameObject);
+                break;
+
+            case "HP":
+                logic.HpMenager(1);
+                Destroy(collision.gameObject);
+                break;
+
+            case "Enemy":
+                if (!isBlinking)
+                {
+                    StartCoroutine(Blink());
+                    eatBadMeatSound.Play();
+                    logic.HpMenager(-1);
+                    Destroy(collision.gameObject);
+                }
+                break;
         }
     }
 }

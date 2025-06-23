@@ -354,7 +354,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 5
+  m_Text: 
 --- !u!222 &54538788
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -449,7 +449,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 495710773}
         m_TargetAssemblyTypeName: LogicScript, Assembly-CSharp
-        m_MethodName: resetGame
+        m_MethodName: ResetGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -626,7 +626,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 6
 --- !u!212 &274412042
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -801,10 +801,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 274412041}
-  moveSpeed: 6
   sr: {fileID: 274412042}
   eatBreadSound: {fileID: 274412049}
   eatBadMeatSound: {fileID: 274412048}
+  moveSpeed: 6.5
 --- !u!70 &274412047
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1308,7 +1308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScore: 0
-  playerHP: 5
+  playerHP: 3
   scoreText: {fileID: 1659444407}
   hpText: {fileID: 54538787}
   finalScore: {fileID: 1776495818}
@@ -1741,7 +1741,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 495710773}
         m_TargetAssemblyTypeName: LogicScript, Assembly-CSharp
-        m_MethodName: showCredits
+        m_MethodName: ShowCredits
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2366,7 +2366,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 495710773}
         m_TargetAssemblyTypeName: LogicScript, Assembly-CSharp
-        m_MethodName: quitGame
+        m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2621,7 +2621,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 495710773}
         m_TargetAssemblyTypeName: LogicScript, Assembly-CSharp
-        m_MethodName: quitGame
+        m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3167,7 +3167,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 495710773}
         m_TargetAssemblyTypeName: LogicScript, Assembly-CSharp
-        m_MethodName: startGame
+        m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3609,7 +3609,7 @@ PrefabInstance:
     - target: {fileID: 1260482093257878310, guid: d92b5aaa7e7d55e478e34eb333483c69, type: 3}
       propertyPath: foodPrefab.Array.data[6]
       value: 
-      objectReference: {fileID: 6073080276616344299, guid: 654147df7a2396e4090e11b4d183a859, type: 3}
+      objectReference: {fileID: 7127835710552395138, guid: 888af7a96c6996e4db81773c6442a02b, type: 3}
     - target: {fileID: 1260482093257878310, guid: d92b5aaa7e7d55e478e34eb333483c69, type: 3}
       propertyPath: foodPrefab.Array.data[7]
       value: 
@@ -3621,7 +3621,7 @@ PrefabInstance:
     - target: {fileID: 1260482093257878310, guid: d92b5aaa7e7d55e478e34eb333483c69, type: 3}
       propertyPath: foodPrefab.Array.data[9]
       value: 
-      objectReference: {fileID: 7127835710552395138, guid: 888af7a96c6996e4db81773c6442a02b, type: 3}
+      objectReference: {fileID: 7127835710552395138, guid: 1a5db245bd935d347a5e9d7f55087855, type: 3}
     - target: {fileID: 1260482093257878311, guid: d92b5aaa7e7d55e478e34eb333483c69, type: 3}
       propertyPath: m_RootOrder
       value: 6

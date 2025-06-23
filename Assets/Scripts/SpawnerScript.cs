@@ -28,6 +28,7 @@ public class SpawnerScript : MonoBehaviour
             transform.position = new Vector3(spawnerPosition, 7, 0);
             spawnRate -= Time.deltaTime;
         }
+
         if (spawnRate <= 0)
         {
             SetPrefab();
