@@ -97,7 +97,7 @@ public class PlayerScript : MonoBehaviour
                 break;
 
             case "HP":
-                if (logic.playerHP < 5)
+                if (logic.playerHP < 3)
                 {
                     logic.HpMenager(1);
                 }
