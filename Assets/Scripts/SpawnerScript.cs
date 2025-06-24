@@ -43,10 +43,8 @@ public class SpawnerScript : MonoBehaviour
 
     private float GetSpawnRate()
     {
-        // Example: spawn rate decreases gradually over 120 seconds
-        // Initial rate: 1.5s → minimum rate: 0.4s
-        float rate = 1.5f - (gameTime / 150f); // decrease rate over 2 minutes
-        return Mathf.Clamp(rate, 0.5f, 1.5f);  // prevent going below 0.4s
+        float rate = 1.5f - (gameTime / 150f); 
+        return Mathf.Clamp(rate, 0.5f, 1.5f);  
     }
 
     public void SetSpawnerPosition()

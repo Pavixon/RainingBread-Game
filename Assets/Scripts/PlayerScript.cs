@@ -14,7 +14,7 @@ public class PlayerScript : MonoBehaviour
     private LogicScript logic;
     private bool isPlayerAlive = true;
     private int upgarde = 25;
-    private int blinkCout = 5;
+    private int blinkCount = 5;
     private bool isBlinking = false;
 
     void Start()
@@ -43,7 +43,13 @@ public class PlayerScript : MonoBehaviour
             }
             else
             {
-                rb.velocity = moveInput * moveSpeed;
+                rb.velocity = moveInput * moveSpeed ;
+            }
+
+            if (logic.playerScore == upgarde)
+            {
+                SpeedUp();
+                upgarde += 25;
             }
         }
     }
@@ -52,17 +58,12 @@ public class PlayerScript : MonoBehaviour
     {
         Vector2 input = context.ReadValue<Vector2>();
         moveInput = new Vector2(input.x, 0f);
-        if(logic.playerScore == upgarde)
-        {
-            SpeedUp();
-            upgarde += 25;
-        }
     }
 
     private IEnumerator Blink()
     {
         isBlinking = true;
-        for (int i = 0; i < blinkCout; i++)
+        for (int i = 0; i < blinkCount; i++)
         {
             sr.enabled = false;
             yield return new WaitForSeconds(0.2f);
