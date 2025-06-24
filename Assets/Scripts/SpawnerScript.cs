@@ -9,6 +9,7 @@ public class SpawnerScript : MonoBehaviour
     private float[] spawnSlots = new float[] { -6f, 5f, -4f, -4f, -2f, -1f, 0f, 1f, 2f, 3f, 4f, 5f, 6f };
     public LogicScript logic;
     private float gameTime;
+    private float lastSpawnSlot = 0;
 
     void Start()
     {
@@ -23,7 +24,11 @@ public class SpawnerScript : MonoBehaviour
         if (logic.gameScreen.activeSelf)
         {
             gameTime += Time.deltaTime;
-            transform.position = new Vector3(spawnerPosition, 7, 0);
+            if (spawnerPosition != lastSpawnSlot)
+            {
+                transform.position = new Vector3(spawnerPosition, 7, 0);
+                lastSpawnSlot = spawnerPosition;
+            }
             spawnRate -= Time.deltaTime;
         }
 
@@ -46,7 +51,13 @@ public class SpawnerScript : MonoBehaviour
 
     public void SetSpawnerPosition()
     {
-        spawnerPosition = spawnSlots[Random.Range(0, spawnSlots.Length)];
+        float newSlot;
+        do
+        {
+            newSlot = spawnSlots[Random.Range(0, spawnSlots.Length)];
+        } while (newSlot == lastSpawnSlot);
+
+        spawnerPosition = newSlot;
     }
 
     public void SetPrefab()    
