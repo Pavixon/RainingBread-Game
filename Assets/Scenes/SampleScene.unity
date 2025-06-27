@@ -7866,7 +7866,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 41.039124, y: 181.98169}
-  m_SizeDelta: {x: 640.7439, y: 345.7582}
+  m_SizeDelta: {x: 640.7439, y: 353.49}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1759139966
 MonoBehaviour:
@@ -7916,7 +7916,9 @@ MonoBehaviour:
     Free Pixel Font - Thaleah
 
     Pixel Art
-    Icon Pack - RPG'
+    Icon Pack - RPG
+
+    Pixel Tiles For Side Scroller'
 --- !u!222 &1759139967
 CanvasRenderer:
   m_ObjectHideFlags: 0
