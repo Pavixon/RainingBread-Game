@@ -8,6 +8,7 @@ public class PlayerScript : MonoBehaviour
     public SpriteRenderer sr;
     public AudioSource eatBreadSound;
     public AudioSource eatBadMeatSound;
+    public AudioSource eatHP;
     [SerializeField]
     private float moveSpeed = 6f;
     private Vector2 moveInput;
@@ -101,6 +102,7 @@ public class PlayerScript : MonoBehaviour
                 if (logic.playerHP < 3)
                 {
                     logic.HpMenager(1);
+                    eatHP.Play();
                 }
                 Destroy(collision.gameObject);
                 break;
